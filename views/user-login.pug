@@ -1,0 +1,24 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title User Login
+h1 User Login
+form(onsubmit='handleUserLogin(event)')
+  label(for='username') Username:
+  input#username(type='text' required='')
+  label(for='password') Password:
+  input#password(type='password' required='')
+  button(type='submit') Login
+script.
+  function handleUserLogin(event) {
+  event.preventDefault();
+  // Validate credentials (this is a placeholder)
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  if (username === 'user' && password === 'password') { // Dummy validation
+  window.location.href = './user-dashboard.html'; // Redirect to user dashboard
+  } else {
+  alert('Invalid credentials, please try again.');
+  }
+  }
